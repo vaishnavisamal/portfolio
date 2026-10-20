@@ -3,412 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaishnavi Samal — GenAI Engineer & Technical Service Professional</title>
-<meta name="description" content="Vaishnavi Samal — GenAI Engineer, AI Engineer & Technical Service / Client Success Professional, Pune, India.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>Vaishnavi Samal — AI Engineer | Generative AI Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1a1a1a;--ink2:#4a4a4a;--ink3:#8a8a8a;
+  --bg:#faf9f6;--bg2:#f0ede6;--bg3:#e8e3d8;
+  --accent:#b5651d;--accent2:#d4863a;--accent-light:#f5ede0;
+  --serif:'Playfair Display',serif;--sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(250,249,246,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--bg3)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);letter-spacing:0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;color:var(--ink2);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 3rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;top:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,var(--bg2),var(--bg3));clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);z-index:0}
+.hero-deco{position:absolute;bottom:10%;right:8%;width:200px;height:200px;border-radius:50%;border:1px solid var(--bg3);z-index:0}
+.hero-deco2{position:absolute;top:20%;right:20%;width:80px;height:80px;border-radius:50%;background:var(--accent-light);z-index:0}
+.hero-content{position:relative;z-index:1;max-width:580px}
+.hero-tag{display:inline-block;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.35rem 1rem;border-radius:2rem;margin-bottom:1.5rem;font-weight:500}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;margin-bottom:1rem;color:var(--ink)}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:1rem;color:var(--ink2);max-width:440px;margin-bottom:2rem;font-weight:300;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:0.75rem 1.8rem;border-radius:2rem;text-decoration:none;font-size:0.85rem;letter-spacing:0.05em;font-weight:500;transition:background 0.2s,transform 0.2s}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-outline{border:1.5px solid var(--ink);color:var(--ink);padding:0.75rem 1.8rem;border-radius:2rem;text-decoration:none;font-size:0.85rem;letter-spacing:0.05em;font-weight:500;transition:all 0.2s}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+.hero-langs{margin-top:2.5rem;display:flex;gap:0.6rem;flex-wrap:wrap}
+.lang-pill{font-size:0.75rem;padding:0.3rem 0.85rem;border-radius:2rem;background:var(--bg2);color:var(--ink2);border:1px solid var(--bg3)}
+
+/* SECTION BASE */
+section{padding:5rem 3rem}
+.section-label{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.6rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:1rem;color:var(--ink)}
+.section-line{width:40px;height:2px;background:var(--accent);margin-bottom:2.5rem}
+
+/* ABOUT */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{font-size:0.95rem;color:var(--ink2);line-height:1.9;margin-bottom:1rem;font-weight:300}
+.about-cards{display:grid;gap:1rem}
+.about-card{background:var(--bg);padding:1.2rem 1.5rem;border-radius:12px;border-left:3px solid var(--accent)}
+.about-card h4{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem;font-weight:600}
+.about-card p{font-size:0.88rem;color:var(--ink2);font-weight:300}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--bg3)}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+.tl-item::before{content:'';position:absolute;left:-2.35rem;top:0.35rem;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-date{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.3rem;font-weight:500}
+.tl-company{font-size:0.78rem;color:var(--accent);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.2rem}
+.tl-role{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-bottom:0.6rem}
+.tl-desc{font-size:0.88rem;color:var(--ink2);line-height:1.8;font-weight:300}
+.tl-desc li{margin-bottom:0.3rem;padding-left:0.5rem}
+
+/* SKILLS */
+.skills-bg{background:var(--ink)}
+.skills-bg .section-title{color:var(--bg)}
+.skills-bg .section-label{color:var(--accent2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.skill-group{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem}
+.skill-group h4{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;font-weight:600}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+.skill-tag{font-size:0.8rem;padding:0.3rem 0.85rem;border-radius:2rem;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.12)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.proj-card{background:var(--bg);border:1px solid var(--bg3);border-radius:16px;padding:1.8rem;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08)}
+.proj-tag{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:0.25rem 0.75rem;border-radius:2rem;font-weight:600;margin-bottom:1rem;display:inline-block}
+.proj-card h3{font-family:var(--serif);font-size:1.1rem;margin-bottom:0.6rem;color:var(--ink)}
+.proj-card p{font-size:0.85rem;color:var(--ink2);line-height:1.8;font-weight:300}
+.proj-tech{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.4rem}
+.proj-tech span{font-size:0.75rem;padding:0.2rem 0.65rem;border-radius:2rem;background:var(--bg2);color:var(--ink2);border:1px solid var(--bg3)}
+
+/* CERTIFICATIONS */
+.certs{background:var(--bg2)}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.cert-card{background:var(--bg);padding:1.2rem 1.5rem;border-radius:12px;border:1px solid var(--bg3);display:flex;align-items:flex-start;gap:1rem}
+.cert-icon{width:36px;height:36px;border-radius:8px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.cert-card h4{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem}
+.cert-card p{font-size:0.78rem;color:var(--ink3)}
+
+/* CONTACT */
+.contact-inner{max-width:600px;margin:0 auto;text-align:center}
+.contact-inner .section-line{margin:0 auto 2.5rem}
+.contact-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:2rem}
+.contact-link{display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;color:var(--ink2);text-decoration:none;padding:0.7rem 1.4rem;border:1px solid var(--bg3);border-radius:2rem;transition:all 0.2s;font-weight:400}
+.contact-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.contact-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,0.4);text-align:center;padding:2rem;font-size:0.8rem;letter-spacing:0.05em}
+
+@media(max-width:700px){
+  nav{padding:1rem 1.5rem}.hero{padding:6rem 1.5rem 3rem}
+  .hero-bg{display:none}.about-grid{grid-template-columns:1fr}
+  section{padding:3.5rem 1.5rem}
+}
+</style>
+<style>
+.proj-card ul{margin:.6rem 0 0 1.1rem;font-size:.84rem;color:var(--ink2);font-weight:300;line-height:1.7}
+.proj-card .learn{font-size:.78rem;color:var(--ink3);margin-top:.8rem}
+.skills-note{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:1.5rem}
+</style>
 </head>
 <body>
+<nav><div class="nav-logo">Vaishnavi Samal</div>
+<ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 
-<div class="mobile-bar">
-  <div class="m-name">Vaishnavi Samal</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</div>
+<section class="hero"><div class="hero-bg"></div><div class="hero-deco"></div><div class="hero-deco2"></div>
+<div class="hero-content"><div class="hero-tag">Open to AI Engineering Roles</div>
+<h1>Vaishnavi<br><span>Samal</span></h1>
+<p class="hero-sub"><strong>AI Engineer | Generative AI Developer | Python.</strong> I build practical AI applications with LLMs, RAG, AI agents and intelligent automation, from Pune, India.</p>
+<div class="hero-btns"><a href="#projects" class="btn-primary">View Projects</a><a href="Vaishnavi_Samal_Resume.pdf" class="btn-outline">Download Resume</a><a href="#contact" class="btn-outline">Contact Me</a></div>
+<div class="hero-langs"><span class="lang-pill">Generative AI</span><span class="lang-pill">LLMs</span><span class="lang-pill">RAG</span><span class="lang-pill">AI Agents</span><span class="lang-pill">Prompt Engineering</span></div></div></section>
 
-<div class="shell">
-  <aside class="sidebar">
-    <div>
-      <div class="mono-badge">VS</div>
-      <div class="side-name">Vaishnavi<br>Samal</div>
-      <div class="side-role">GENAI ENGINEER · AI ENGINEER<br>SOFTWARE DEVELOPER · TECHNICAL<br>SERVICE &amp; CLIENT SUCCESS</div>
-    </div>
+<section class="about" id="about"><p class="section-label">Who I am</p><h2 class="section-title">About Me</h2><div class="section-line"></div>
+<div class="about-grid"><div class="about-text">
+<p>I am a software professional who independently upskilled in Artificial Intelligence and Generative AI through hands-on projects, continuous learning and experimentation with AI APIs.</p>
+<p>I enjoy turning AI concepts into practical applications that help people find information faster and automate everyday tasks. My projects include meeting summarization, document question answering, resume assistance, conversational chatbots and multimodal apps.</p>
+<p>Before moving into AI, I worked in enterprise technical support at Fujitsu, where I built Python automation, SQL analysis and Power BI reporting, and wrote technical documentation. I want to join a team where I can apply these skills and grow as an AI Engineer.</p></div>
+<div class="about-cards">
+<div class="about-card"><h4>Focus Areas</h4><p>Generative AI · LLM applications · RAG · AI agents · Python · Prompt engineering</p></div>
+<div class="about-card"><h4>How I work</h4><p>Build it, test it, improve it. Practical, user-focused applications with structured troubleshooting.</p></div>
+<div class="about-card"><h4>Education</h4><p>BE, Electrical, Electronics &amp; Communications Engineering<br>PES Modern College of Engineering, Pune · 2019–2022</p></div>
+<div class="about-card"><h4>Location &amp; Availability</h4><p>Pune, Maharashtra, India · Immediate joiner</p></div></div></div></section>
 
-    <nav class="side-nav">
-      <a href="#about"><span>About</span><span class="n">01</span></a>
-      <a href="#experience"><span>Experience</span><span class="n">02</span></a>
-      <a href="#skills"><span>Skills</span><span class="n">03</span></a>
-      <a href="#projects"><span>Projects</span><span class="n">04</span></a>
-      <a href="#certifications"><span>Certifications</span><span class="n">05</span></a>
-      <a href="#contact"><span>Contact</span><span class="n">06</span></a>
-    </nav>
+<section class="skills-bg" id="skills"><p class="section-label">Expertise</p><h2 class="section-title">Skills &amp; Technologies</h2><div class="section-line"></div>
+<div class="skills-grid">
+<div class="skill-group"><h4>Generative AI &amp; LLMs</h4><div class="skill-tags"><span class="skill-tag">LLM API integration</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Model experimentation</span><span class="skill-tag">Tool / Function Calling</span><span class="skill-tag">Vision LLMs</span><span class="skill-tag">Responsible AI</span></div></div>
+<div class="skill-group"><h4>RAG &amp; Retrieval</h4><div class="skill-tags"><span class="skill-tag">RAG</span><span class="skill-tag">Embeddings</span><span class="skill-tag">ChromaDB</span><span class="skill-tag">Semantic Search</span><span class="skill-tag">Text Chunking</span><span class="skill-tag">PyPDF</span></div></div>
+<div class="skill-group"><h4>AI Agents &amp; Workflows</h4><div class="skill-tags"><span class="skill-tag">LangChain / LCEL</span><span class="skill-tag">Google ADK</span><span class="skill-tag">Microsoft Foundry</span><span class="skill-tag">MCP Servers</span><span class="skill-tag">Multi-step Workflows</span></div></div>
+<div class="skill-group"><h4>Models &amp; APIs</h4><div class="skill-tags"><span class="skill-tag">Gemini</span><span class="skill-tag">Mistral AI</span><span class="skill-tag">Groq</span><span class="skill-tag">OpenAI-compatible API</span><span class="skill-tag">Whisper</span><span class="skill-tag">Sarvam AI</span><span class="skill-tag">Hugging Face</span></div></div>
+<div class="skill-group"><h4>Programming &amp; Apps</h4><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">REST APIs</span><span class="skill-tag">JSON</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Gradio</span><span class="skill-tag">Git / GitHub</span><span class="skill-tag">uv</span></div></div>
+<div class="skill-group"><h4>Automation &amp; Data</h4><div class="skill-tags"><span class="skill-tag">Python Automation</span><span class="skill-tag">Power Automate</span><span class="skill-tag">Power BI (DAX)</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Technical Documentation</span></div></div>
+</div><p class="skills-note">Skills reflect hands-on project work and independent learning; depth varies by technology.</p></section>
 
-    <div class="side-block">
-      <h5>Languages</h5>
-      <div class="side-langs">
-        <span class="lang-pill">English</span>
-        <span class="lang-pill">Hindi</span>
-        <span class="lang-pill">Japanese</span>
-        <span class="lang-pill">Marathi</span>
-        <span class="lang-pill">Telugu</span>
-        <span class="lang-pill">Gujarati</span>
-      </div>
-    </div>
+<section id="projects"><p class="section-label">Work</p><h2 class="section-title">AI Projects</h2><div class="section-line"></div>
+<div class="projects-grid">
+<div class="proj-card"><div class="proj-tag">RAG · Speech</div><h3>AI Meeting and Video Assistant</h3><p>Turns long recordings into searchable insights: transcripts, summaries, decisions, owners and deadlines, plus question answering over the content.</p><ul><li>English, Hindi and Hinglish transcription (Whisper + Sarvam AI)</li><li>RAG pipeline: chunking, embeddings, ChromaDB semantic search</li><li>Streamlit UI with live status and PDF/TXT export</li></ul><div class="proj-tech"><span class="">Python</span><span class="">LangChain LCEL</span><span class="">Mistral AI</span><span class="">ChromaDB</span><span class="">Whisper</span><span class="">Streamlit</span></div></div>
+<div class="proj-card"><div class="proj-tag">AI Agent</div><h3>Foundry AI Agent: Tools and Knowledge</h3><p>A reusable agent built in Microsoft Foundry with defined role, tone and guardrails, extended with tools and document knowledge.</p><ul><li>Tool calling: Code Interpreter, custom functions/APIs, MCP servers</li><li>RAG over PDFs and enterprise documents for grounded, citation-backed answers</li><li>Python client via Foundry Projects SDK with secure credentials</li></ul><div class="proj-tech"><span class="">Python</span><span class="">Microsoft Foundry</span><span class="">Azure AI</span><span class="">RAG</span><span class="">MCP</span></div></div>
+<div class="proj-card"><div class="proj-tag">AI Agent</div><h3>AI Agent with Google ADK</h3><p>An agent that pairs Gemini with the Google Search tool and custom Python function tools, triggered from natural-language requests.</p><ul></ul><div class="proj-tech"><span class="">Python</span><span class="">Google ADK</span><span class="">Gemini API</span><span class="">Function Tools</span></div></div>
+<div class="proj-card"><div class="proj-tag">LLM API</div><h3>Foundry GenAI Chat Client</h3><p>A Python client calling a deployed LLM through the OpenAI-compatible Responses API, used to compare model behavior.</p><ul><li>Compared temperature, max output tokens and system vs user prompts for output, length, cost and throttling</li><li>Endpoints and keys secured with environment variables</li></ul><div class="proj-tech"><span class="">Python</span><span class="">Foundry SDK</span><span class="">Responses API</span><span class="">Azure</span></div></div>
+<div class="proj-card"><div class="proj-tag">LLM App</div><h3>AI Resume: GenAI Career Assistant</h3><p>Resume Checker, Resume-JD Matcher, Cover Letter Generator and Career Coach built on PDF text extraction and prompt engineering.</p><ul></ul><div class="proj-tech"><span class="">Python</span><span class="">Streamlit</span><span class="">LangChain</span><span class="">Groq</span><span class="">PyPDF</span></div></div>
+<div class="proj-card"><div class="proj-tag">Multimodal</div><h3>AI Doctor with Vision and Voice</h3><p>An experimental voice agent that analyzes an image and a spoken or typed question. For learning only, not medical advice.</p><ul></ul><div class="proj-tech"><span class="">Python</span><span class="">Gradio</span><span class="">Groq</span><span class="">Whisper</span><span class="">Edge-TTS</span></div></div>
+<div class="proj-card"><div class="proj-tag">Chatbot</div><h3>ChatGaapSaap</h3><p>A streaming conversational chatbot built to explore LLM integration and prompt design.</p><ul><li>Secrets in environment variables, dependencies with uv, code on Git/GitHub</li></ul><div class="proj-tech"><span class="">Python</span><span class="">Mistral AI</span><span class="">LangChain</span><span class="">Streamlit</span></div></div>
+</div></section>
 
-    <div class="side-contact">
-      <a href="mailto:samalvaishnavi@gmail.com">
-        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        samalvaishnavi@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/vaishnavisamal" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn Profile
-      </a>
-      <a href="#contact">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Pune, Maharashtra
-      </a>
-    </div>
-  </aside>
+<section class="about" id="experience"><p class="section-label">Career</p><h2 class="section-title">Experience</h2><div class="section-line"></div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-date">May 2026 – Jul 2026</div><div class="tl-company">Aesthetic Eaves</div><div class="tl-role">Client Relations Executive &amp; AI Engineer</div><div class="tl-desc"><ul><li>Researched, evaluated and implemented automation tools that reduced manual workload in client-facing operations</li><li>Coordinated cross-functional teams and translated client needs into practical solutions</li></ul></div></div>
+<div class="tl-item"><div class="tl-date">Jul 2024 – Dec 2025</div><div class="tl-company">Fujitsu, Pune</div><div class="tl-role">Technical Service Engineer</div><div class="tl-desc"><ul><li>Built Python workflow automation that auto-generated recurring client reports and sent real-time P1 incident and SLA-breach alerts across 20,000+ enterprise sites</li><li>Analyzed incident data with SQL and Python and built Power BI dashboards with KPIs (SQL, DAX)</li><li>Ran root cause analysis with cross-functional teams; authored SOPs and technical documentation</li></ul></div></div>
+<div class="tl-item"><div class="tl-date">Jun 2023 – Jul 2024</div><div class="tl-company">Fujitsu, Pune</div><div class="tl-role">Trainee</div><div class="tl-desc"><ul><li>Handled data and reporting with SQL and Python; supported incident tracking, monitoring and documentation</li><li>Progressed to Technical Service Engineer in 13 months</li></ul></div></div>
+<div class="tl-item"><div class="tl-date">Apr 2022 – Dec 2022</div><div class="tl-company">Test Yantra Software Solutions, Pune</div><div class="tl-role">Full Stack Developer Intern</div><div class="tl-desc"><ul><li>Built web applications with Java, JSP, Servlets and JDBC with MySQL; worked in Agile development cycles</li></ul></div></div>
+</div></section>
 
-  <div class="content">
+<section class="certs" id="certifications"><p class="section-label">Learning</p><h2 class="section-title">Certifications</h2><div class="section-line"></div>
+<div class="certs-grid">
+<div class="cert-card"><div class="cert-icon">🤖</div><div><h4>Get Started with Generative AI and Agents in Azure</h4><p>Microsoft Learn</p></div></div>
+<div class="cert-card"><div class="cert-icon">🧠</div><div><h4>AI Concepts for Developers and Technology Professionals</h4><p>Microsoft Learn</p></div></div>
+<div class="cert-card"><div class="cert-icon">📊</div><div><h4>Tata: GenAI Powered Data Analytics Job Simulation</h4><p>Forage / Tata</p></div></div>
+<div class="cert-card"><div class="cert-icon">💡</div><div><h4>Get Ready for Generative AI; What Is Generative AI?</h4><p>LinkedIn Learning</p></div></div>
+<div class="cert-card"><div class="cert-icon">🗄️</div><div><h4>IBM Data Fundamentals · Python (SABA) · Database and SQL (Infosys) · CompTIA IT Fundamentals+</h4><p>Foundations</p></div></div>
+</div></section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-kicker">Open to opportunities · Absolute learner</div>
-      <h1>Engineering <em>GenAI</em> systems,<br>and earning client trust.</h1>
-      <p class="hero-sub">I'm a GenAI &amp; AI Engineer with 3+ years across technical service delivery, SLA/incident management, and data-driven reporting. An absolute learner, genuinely interested in AI — I build LLM-powered assistants, RAG pipelines, and automation tools on my own time, alongside a strong client-facing foundation.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Get in touch</a>
-        <a href="#experience" class="btn-outline">View experience</a>
-      </div>
-      <div class="hero-strip">
-        <div><div class="num">3+</div><div class="lbl">Years in tech &amp; client roles</div></div>
-        <div><div class="num">5</div><div class="lbl">GenAI &amp; dev projects shipped</div></div>
-        <div><div class="num">6</div><div class="lbl">Languages spoken</div></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <p class="eyebrow">01 — Who I am</p>
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>I'm a <strong>client-focused technical professional</strong> and self-driven <strong>GenAI engineer</strong> with 3+ years of experience across technical service delivery, SLA/incident management, and data-driven operational reporting within a Fortune 500 global technology enterprise (Fujitsu).</p>
-          <p>An absolute learner with a strong, self-directed track record of building generative AI and automation solutions — including LLM-powered assistants, Retrieval-Augmented Generation (RAG) pipelines, and workflow automation tools — alongside core skills in Power BI reporting and client lifecycle management. I'm continuously upskilling in LLMs, RAG architectures, and AI agent development.</p>
-          <p>Educated in Electronics, Electronics &amp; Communications Engineering from PES Modern College of Engineering, Pune — I blend a technical foundation with sharp client-facing acumen.</p>
-        </div>
-        <div class="about-cards">
-          <div class="about-card">
-            <h4>Focus areas</h4>
-            <p>GenAI &amp; LLM Engineering · RAG Systems · Prompt Engineering · Client Lifecycle Management · Process Automation · Data Reporting</p>
-          </div>
-          <div class="about-card">
-            <h4>GenAI specialization</h4>
-            <p>LangChain, RAG (ChromaDB), OpenAI Whisper, Vision LLMs, Groq API, HuggingFace Embeddings, AI-assisted development</p>
-          </div>
-          <div class="about-card">
-            <h4>Education</h4>
-            <p>BE — Electronics, Electronics &amp; Communications Engineering<br>PES Modern College of Engineering · 2019–2022</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="eyebrow">02 — Career</p>
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-
-        <div class="tl-item">
-          <div class="tl-date">May 2026 — Jul 2026</div>
-          <div class="tl-company">Aesthetic Eaves</div>
-          <div class="tl-role">Client Relations Executive &amp; AI Engineer</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Manage end-to-end client relationships from initial consultation through project completion and payment closure</li>
-              <li>Serve as primary point of contact, ensuring seamless communication and customer satisfaction</li>
-              <li>Coordinate with internal teams to ensure timely project execution and delivery</li>
-              <li>Implement AI-driven solutions to improve operational efficiency and business workflows</li>
-              <li>Research, evaluate, and integrate AI tools to streamline day-to-day business processes</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Dec 2025 — Apr 2026</div>
-          <div class="tl-company">Samal Engineers</div>
-          <div class="tl-role">Manager</div>
-          <div class="tl-desc">
-            <ul>
-  <li>Managed and supervised day-to-day business operations, leading cross-functional teams to ensure smooth workflow and timely project execution</li>
-  <li>Led team coordination, task allocation, performance monitoring, and ensured effective collaboration across departments</li>
-  <li>Handled end-to-end project management, including planning, execution, client coordination, and delivery management</li>
-  <li>Managed client relationships, addressed requirements, resolved concerns, and ensured high levels of customer satisfaction</li>
-  <li>Coordinated with vendors, contractors, and internal teams to streamline operations and achieve project objectives</li>
-  <li>Prepared and reviewed quotations, invoices, reports, project documentation, and operational records</li>
-  <li>Monitored project timelines, budgets, and resource allocation to ensure efficient utilization of company resources</li>
-  <li>Supported business growth initiatives through client acquisition, follow-ups, and process improvements</li>
-  <li>Provided leadership and guidance to team members, ensuring productivity, accountability, and achievement of business goals</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Jun 2024 — Dec 2025</div>
-          <div class="tl-company">Fujitsu</div>
-          <div class="tl-role">Technical Service Engineer</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Delivered technical service and customer support within a Fortune 500 global technology enterprise, diagnosing and resolving complex technical issues while consistently meeting SLA targets</li>
-              <li>Configured and monitored Cisco Meraki cloud-managed network infrastructure and FMNOS-based monitoring systems for reliable connectivity and performance</li>
-              <li>Built interactive Power BI dashboards (DAX, Power Query) tracking SLA compliance, incident trends, and performance metrics across multiple accounts and 20,000+ enterprise sites</li>
-              <li>Automated real-time notifications for P1 incidents and SLA breaches using Microsoft Power Automate, improving response times and reducing manual reporting effort</li>
-              <li>Created a standard SOP for fetching and sending client reports using Python, streamlining recurring report delivery and ensuring consistent, timely communication with clients</li>
-              <li>Delivered daily client updates and led stand-up meetings to ensure clear communication and timely issue resolution</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Jun 2023 — Jul 2024</div>
-          <div class="tl-company">Fujitsu</div>
-          <div class="tl-role">Trainee</div>
-          <div class="tl-desc">Trained in technical service operations, building foundational expertise in systems support and client management processes.</div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Apr 2022 — Dec 2022</div>
-          <div class="tl-company">TestYantra Software Solutions</div>
-          <div class="tl-role">Full Stack Java Developer Intern</div>
-          <div class="tl-desc">
-            <ul>
-              <li>Designed and developed web applications following MVC architecture</li>
-              <li>Implemented CRUD operations and database interactions using MySQL</li>
-              <li>Worked across requirement analysis, development, testing, and deployment phases of the SDLC</li>
-              <li>Integrated front-end and back-end components to deliver functional solutions</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="skills-bg" id="skills">
-      <p class="eyebrow">03 — Expertise</p>
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h4>GenAI &amp; LLM Engineering</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">LLMs</span>
-            <span class="skill-tag">Vision LLMs</span>
-            <span class="skill-tag">RAG</span>
-            <span class="skill-tag">LangChain (LCEL)</span>
-            <span class="skill-tag">Prompt Engineering</span>
-            <span class="skill-tag">OpenAI Whisper</span>
-            <span class="skill-tag">Groq API</span>
-            <span class="skill-tag">Mistral AI</span>
-            <span class="skill-tag">HuggingFace Embeddings</span>
-            <span class="skill-tag">ChromaDB</span>
-            <span class="skill-tag">Gradio</span>
-            <span class="skill-tag">Streamlit</span>
-            <span class="skill-tag">Edge-TTS</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Client &amp; Business</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Business Development</span>
-            <span class="skill-tag">CRM</span>
-            <span class="skill-tag">Project Management</span>
-            <span class="skill-tag">Stakeholder Management</span>
-            <span class="skill-tag">Business Operations</span>
-            <span class="skill-tag">Customer Success</span>
-          </div>
-        </div>
-        
-
-        <div class="skill-group">
-          <h4>Database &amp; Analytics</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Microsoft Power BI</span>
-            <span class="skill-tag">Microsoft Excel</span>
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">Dashboard Development</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Version Control &amp; Tools</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Vercel</span>
-            <span class="skill-tag">CI/CD Deployment</span>
-            <span class="skill-tag">Visual Studio Code</span>
-            <span class="skill-tag">npm</span>
-            <span class="skill-tag">Postman</span>
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4>Languages</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">English</span>
-            <span class="skill-tag">Hindi</span>
-            <span class="skill-tag">Japanese</span>
-            <span class="skill-tag">Marathi</span>
-            <span class="skill-tag">Telugu</span>
-            <span class="skill-tag">Gujarati</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="eyebrow">04 — Work</p>
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <div class="proj-card">
-          <span class="proj-tag">Personal GenAI Project</span>
-          <h3>AI Meeting &amp; Video Assistant</h3>
-          <p>A full-stack AI assistant that automates transcription, summarization, and extraction of actionable insights — decisions, owners, deadlines — from video and audio inputs sourced from YouTube or local files.</p>
-          <div class="proj-tech">
-            <span>Python</span><span>LangChain (LCEL)</span><span>ChromaDB</span><span>OpenAI Whisper</span><span>Sarvam AI</span><span>Mistral AI</span><span>Streamlit</span>
-          </div>
-        </div>
-        <div class="proj-card">
-          <span class="proj-tag">Personal GenAI Project</span>
-          <h3>AI Doctor with Vision &amp; Voice</h3>
-          <p>A multimodal AI healthcare assistant that analyzes medical images and voice-based patient queries, combining speech-to-text, vision understanding, and natural voice responses in one interactive tool.</p>
-          <div class="proj-tech">
-            <span>Python</span><span>Gradio</span><span>Groq API</span><span>Whisper</span><span>Vision LLM</span><span>Edge-TTS</span>
-          </div>
-          <a class="proj-link" href="https://ai-doctor-imageaudio-to-audiotext.onrender.com" target="_blank" rel="noopener">View Project ↗</a>
-        </div>
-        <div class="proj-card">
-          <span class="proj-tag">Client Project · End-to-End</span>
-          <h3>Fit With Atharva — Fitness &amp; Nutrition Platform</h3>
-          <p>Owned this project end-to-end, from requirement gathering through design, development, and final handover — a responsive fitness and nutrition web application with an intuitive UI and optimized performance.</p>
-          <div class="proj-tech">
-            <span>Python</span><span>Git/GitHub</span><span>Vercel</span><span>AI-Assisted Development</span>
-          </div>
-          <a class="proj-link" href="https://www.fitwithatharva.com/" target="_blank" rel="noopener">View Project ↗</a>
-        </div>
-        <div class="proj-card">
-          <span class="proj-tag">Client Project · End-to-End</span>
-          <h3>Sawali Chaha — Business Website</h3>
-          <p>Owned this project end-to-end, from requirement gathering through design, development, and final handover — a responsive business website featuring product showcases and company information.</p>
-          <div class="proj-tech">
-            <span>Python</span><span>Git/GitHub</span><span>Vercel</span><span>AI-Assisted Development</span>
-          </div>
-          <a class="proj-link" href="https://sawalichaha.vercel.app/" target="_blank" rel="noopener">View Project ↗</a>
-        </div>
-        <div class="proj-card">
-          <span class="proj-tag">Client Project</span>
-          <h3>SA Artisanal Collection</h3>
-          <p>An e-commerce showcase site for a handmade rakhi studio — a full product catalog across three collections with a WhatsApp-based ordering flow, built and deployed end-to-end.</p>
-          <div class="proj-tech">
-            <span>Web Development</span><span>Netlify</span><span>E-commerce Showcase</span>
-          </div>
-          <a class="proj-link" href="https://saartisanalcollection.netlify.app/" target="_blank" rel="noopener">View Project ↗</a>
-        </div>
-        <div class="proj-card">
-          <span class="proj-tag">AI Integration</span>
-          <h3>Business Workflow Automation</h3>
-          <p>Researched, evaluated, and integrated AI tools at Aesthetic Eaves to automate day-to-day operational processes, reducing manual effort and improving productivity across teams.</p>
-          <div class="proj-tech">
-            <span>Generative AI</span><span>Process Automation</span><span>Business Ops</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications">
-      <p class="eyebrow">05 — Learning</p>
-      <h2 class="section-title">Certifications</h2>
-      <div class="certs-grid">
-        <div class="cert-card">
-          <div class="cert-idx">01</div>
-          <div>
-            <h4>CompTIA IT Fundamentals+ (FC0-U61)</h4>
-            <p>CompTIA</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">02</div>
-          <div>
-            <h4>CCNA — Cisco Certified Network Associate (200-301)</h4>
-            <p>Cisco</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">03</div>
-          <div>
-            <h4>Microsoft Power Automate — Complete Guide</h4>
-            <p>LinkedIn Learning</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">04</div>
-          <div>
-            <h4>SQL Essential Training</h4>
-            <p>LinkedIn Learning</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">05</div>
-          <div>
-            <h4>Get Ready for Generative AI</h4>
-            <p>LinkedIn Learning</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">06</div>
-          <div>
-            <h4>What Is Generative AI?</h4>
-            <p>LinkedIn Learning</p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-idx">07</div>
-          <div>
-            <h4>Tata — GenAI-Powered Data Analytics Job Simulation</h4>
-            <p>Forage / Tata</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact-sec" id="contact">
-      <div class="contact-inner">
-        <p class="eyebrow">06 — Let's connect</p>
-        <h2 class="section-title">Get in touch</h2>
-        <p class="lede">Open to opportunities in GenAI engineering, AI/ML engineering, software development, and technical service &amp; client success roles. Also open to freelance web and AI project work — let's build something great together.</p>
-        <div class="contact-links">
-          <a href="mailto:samalvaishnavi@gmail.com" class="contact-link">
-            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-            samalvaishnavi@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/vaishnavisamal" target="_blank" class="contact-link">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer>© 2026 VAISHNAVI SAMAL · PUNE, MAHARASHTRA, INDIA</footer>
-  </div>
-</div>
-
-<script>
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target);} });
-},{threshold:0.1});
-document.querySelectorAll('section > *').forEach(el=>{ el.classList.add('reveal'); observer.observe(el); });
-</script>
-
-</body>
-</html>
+<section id="contact"><div class="contact-inner"><p class="section-label">Let's Connect</p><h2 class="section-title">Get in Touch</h2><div class="section-line"></div>
+<p style="color:var(--ink2);font-size:.95rem;font-weight:300;line-height:1.8">Open to AI Engineer, Generative AI, AI Agent and LLM application roles. Immediate joiner based in Pune.</p>
+<div class="contact-links">
+<a href="mailto:samalvaishnavi@gmail.com" class="contact-link"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>samalvaishnavi@gmail.com</a>
+<a href="https://www.linkedin.com/in/vaishnavisamal" target="_blank" rel="noopener" class="contact-link"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+</div></div></section>
+<footer>© 2026 Vaishnavi Samal · Pune, Maharashtra, India</footer>
+</body></html>
